@@ -1,3 +1,4 @@
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
@@ -15,7 +16,12 @@ module.exports ={
         use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: ['css-loader', 'sass-loader']
-      })
+        })
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
       }
     ]
   },
@@ -28,12 +34,12 @@ module.exports ={
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Project Demo',
+      title: 'The list of the FreeCodeCamp leaders',
       minify: {
         collapseWhitespace: true
       },
       hash: true,
-      template: './src/index.ejs'
+      template: './src/index.html'
     }),
     new ExtractTextPlugin("styles.css")
 ]
