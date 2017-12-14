@@ -1,7 +1,7 @@
 {
   "name": "leader-board",
   "version": "1.0.0",
-  "description": "The list of the leaders by ReactJS",
+  "description": "The list of the FreeCodeCamp leaders by ReactJS",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
